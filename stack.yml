@@ -1,0 +1,17 @@
+version: "3.7"
+
+services:
+  jupyter:
+    image: jupyter/datascience-notebook
+    volumes:
+      - jupyter:/home/jovyan/work:rw
+    networks:
+      - main
+
+volumes:
+  jupyter:
+
+networks:
+  main:
+    external: true
+    name: Main_default
